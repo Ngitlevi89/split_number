@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num1, num2;
+
+    cout << "Please enter a number with three digits" << endl;
+    cin >> num1;
+
+   // cout << "Please enter second number" << endl;
+   // cin >> num2;//
+    int Hundreds = num1 / 100;
+    int D = num1 / 10;
+    int x = Hundreds * 10;
+    int y = Hundreds * 100;
+    int Dozens = D - x;
+    int f = Dozens * 10;
+    int  Units = num1 - y - f;
+    cout << "The result of Hundreds are : " << Hundreds << endl;
+    cout << "The result of Dozens are : " << Dozens << endl;
+    cout << "The result of Units are : " << Units << endl;
+    
+
+
+
+    return 0;
+}
