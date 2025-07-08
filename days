@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num1, num2;
+
+    cout << "Please enter a number representing a day of the week" << endl;
+    cin >> num1;
+    if(num1>=1 && num1<=5)
+    { 
+        cout << "It a working day ):  "  << endl;
+    }
+    else if(num1>5 && num1<=8)
+    {
+        cout << "The weekend has arrived hooray! (: "  << endl;
+
+    }
+    else
+    {
+        cout << "pleas enter a valid number  " << endl;
+
+    }
