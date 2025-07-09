@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num1, num2,num3;
+    cout << "Please enter three numbers" << endl;
+    cin >> num1 >>num2>>num3;
+
+    if (num1 >= num2 && num1 >= num3)
+    {
+         if (num2 >= num3)
+        {
+            cout <<"The number:" << num3 << "\n" << num2 << "\n" << num1 << "\n" << endl;
+        }
+         else {
+             cout << "The number:" << num2 << "\n" << num3 << "\n" << num1 << "\n" << endl;
+         }
+    }
+    if (num2 >= num1 && num2 >= num3)
+    {
+        if (num1 >= num3)
+        {
+            cout << "The number:" << num3 << "\n" << num1 << "\n" << num2 << "\n" << endl;
+        }
+        else {
+            cout << "The number:" << num1 << "\n" << num3 << "\n" << num2 << "\n" << endl;
+        }
+    }
+    if (num3 >= num2 && num3 >= num1)
+    {
+        if (num2 >= num1)
+        {
+            cout << "The number:" << num1 << "\n" << num2 << "\n" << num3 << "\n" << endl;
+        }
+        else {
+            cout << "The number:" << num2 << "\n" << num1 << "\n" << num3 << "\n" << endl;
+
+        }
+    }
+
+  
+
+    return 0;
+}
