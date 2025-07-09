@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int num1, num2;
+    cout << "Please enter a number, and we will tell you if it’s even or odd " << endl;
+    cin >> num1;
+    if(num1%2 == 0 )
+    { 
+        cout << num1<<" is a even number  "  << endl;
+    }
+    
+    else
+    {
+        cout << num1<< " is odd number" << endl;
+
+    }
+
+  
+
+    return 0;
+}
