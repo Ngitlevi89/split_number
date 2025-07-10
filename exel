@@ -1,0 +1,56 @@
+import csv
+import os
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
+
+# בחירת קובץ
+Tk().withdraw()
+file_path = askopenfilename(title="בחר קובץ CSV", filetypes=[("CSV files", "*.csv")])
+
+if not file_path:
+    print("לא נבחר קובץ.")
+    exit()
+
+# אפשרויות בחירה
+options = {
+    "1": "AC Power Supply Module",
+    "2": "AC Station",
+    "3": "Lite ac uvut"
+}
+
+print("בחר מערכת לעדכון:")
+for key, value in options.items():
+    print(f"{key}. {value}")
+
+choice = input("הכנס את מספר הבחירה (1/2/3): ").strip()
+new_value = options.get(choice)
+
+if not new_value:
+    print("בחירה לא תקינה.")
+    exit()
+
+# קריאה
+with open(file_path, 'r', newline='', encoding='utf-8') as f:
+    reader = list(csv.reader(f))
+
+while len(reader) < 9:
+    reader.append([])
+
+for i in [5, 7, 8]:
+    while len(reader[i]) < 8:
+        reader[i].append("")
+
+reader[5][7] = "QACPLUS1000"
+reader[7][7] = "Qinflow"
+reader[8][7] = new_value
+
+# יצירת שם חדש
+base, ext = os.path.splitext(file_path)
+new_file_path = base + "_UPDATED" + ext
+
+# כתיבה לקובץ חדש
+with open(new_file_path, 'w', newline='', encoding='utf-8') as f:
+    writer = csv.writer(f)
+    writer.writerows(reader)
+
+print(f"הקובץ נשמר כ: {new_file_path}")
