@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int student,grade, number{};
+    double avg, sum = 0;
+    cout << "Enter the number of the student" << endl;
+    cin >> student;
+
+    for (int i = 0;i < student;i++)
+    {
+        cout << "Please enter the grade of each student in ascending order." << endl;
+
+        cin >> grade;
+        sum = sum + grade;
+        
+        number++;
+    }
+    avg = sum / number;
+    cout << "The avarage is" << avg << endl;
+    
+
+
+    return 0;
+}
