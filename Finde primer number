@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int num;
+    char prime = true;
+    cout << "Please enter first number" << endl;
+    cin >> num;
+    for (int i = 2;i < num;i++) {
+        if (num % i == 0) {
+            prime = false;
+
+        }
+    }
+    if (prime == true) {
+        cout << "It's Prime  number " << endl;
+    }else{
+        cout << "It's no Prime  number" << endl;
+
+    }
+    return 0;
+
+}
