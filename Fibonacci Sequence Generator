@@ -1,0 +1,26 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    int num;
+    int a1 = 1, a2 = 1,an=1;
+    cout << "Enter a number" << endl;
+    cin >> num;
+    cout <<   a1 << " " << a2 << " ";
+    ;
+    for (int i = 3;i <= num;i++)
+    {
+        a1 = a2;
+        a2 = an;
+        an = a1 + a2;
+        cout << an<<" ";
+
+    }
+    cout << endl;
+    return 0;
+
+
+}
