@@ -24,3 +24,60 @@ int main()
 
 
 }
+Elternative:
+#include <iostream>
+#include <iomanip>
+#include <limits>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    string input;
+    int num;
+    int a1, a2, an;
+
+    while (true) {
+        cout << "Enter a number (or '/' or '\\' to quit): ";
+        cin >> input;
+
+        // בדיקה האם המשתמש לחץ על '/' או '\'
+        if (input == "/" || input == "\\") {
+            cout << "Program exited by user input." << endl;
+            break;
+        }
+
+        // ניסיון להמיר את הקלט למספר
+        try {
+            num = stoi(input); // המרה ממחרוזת למספר שלם
+        }
+        catch (...) {
+            cout << "Invalid input. Please enter a number or '/' or '\\' to quit." << endl;
+            continue;
+        }
+
+        if (num <= 0) {
+            cout << "Please enter a positive number." << endl;
+            continue;
+        }
+
+        a1 = 1;
+        a2 = 1;
+        an = 1;
+
+        cout << a1 << " ";
+        if (num > 1) cout << a2 << " ";
+
+        for (int i = 3; i <= num; i++) {
+            a1 = a2;
+            a2 = an;
+            an = a1 + a2;
+            cout << an << " ";
+        }
+
+        cout << endl;
+    }
+
+    return 0;
+}
